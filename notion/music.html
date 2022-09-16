@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>网易云播放器</title>
+  <link rel="stylesheet" href="../lib/element-ui.css" />
+  <script src="../lib/vue@2.js"></script>
+  <script src="../lib/element-ui.js"></script>
+  <script src="../lib/global.js?v=20220911.1"></script>
+  <style>
+    body,
+    html {
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #root {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <el-scrollbar style="height: 100%" wrap-style="overflow-x:hidden;">
+    <iframe
+      frameborder="no"
+      border="0"
+      marginwidth="0"
+      marginheight="0"
+      :width="widthSize"
+      :height="height"
+      :src="src"
+    ></iframe>
+  </el-scrollbar>
+</div>
+</body>
+<script>
+  new Vue({
+    el: '#root',
+    data() {
+      return {
+        auto: '0',
+        id: '1234705',
+        size: 'bi1g',
+        width: '330', // 宽度范围：280－530
+      }
+    },
+    computed: {
+      src() {
+        return `//music.163.com/outchain/player
+        ?type=2&id=${this.id}&auto=${this.auto}&height=${this.size === 'big' ? '66' : '32'}`
+      },
+      height() {
+        return this.size === 'big' ? '86' : '52'
+      },
+      widthSize() {
+        if (this.width !== '330') {
+          if (this.width > 530) {
+            this.width = '530'
+          }
+          if (this.width < 280) {
+            this.width = '280'
+          }
+        }
+        return this.width !== '330' ? this.width : this.size === 'big' ? '330' : '298'
+      }
+    },
+    mounted() {
+      if (getQueryString('id')) {
+        this.id = getQueryString('id')
+      }
+      if (getQueryString('size')) {
+        this.size = getQueryString('size')
+      }
+    }
+  })
+</script>
+</html>
