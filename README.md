@@ -5,15 +5,14 @@
 
 **例如：`https://shmilybaozi.github.io/my-notion/notion/music.html?size=small&width=360`**
 
-
 1. [历史上的今天](https://shmilybaozi.github.io/my-notion/notion/history-today.html)
-2. [淡黄色字块](https://shmilybaozi.github.io/my-notion/notion/quote.html?text=正经人谁写日记啊)
+2. [淡黄色字块](https://shmilybaozi.github.io/my-notion/notion/text/quote.html?text=正经人谁写日记啊)
    - 地址中 `?text=正经人谁写日记啊` 可以把【正经人谁写日记啊】替换成任何想要的内容
    - 中文效果
      - ![中文效果](./assets/yellow.png)
    - 英文效果_会自动转化成大写
      - ![英文效果](./assets/sj.png)
-3. [年月周进度条](https://shmilybaozi.github.io/my-notion/notion/progress.html?color=8A9FBE,7F8A86,D1958B)
+3. [年月周进度条](https://shmilybaozi.github.io/my-notion/notion/month/progress.html?color=8A9FBE,7F8A86,D1958B)
     - 自定义颜色效果
     - `?color=8A9FBE,7F8A86,D1958B` 可以写 3 个 16 进制颜色，默认是 `7E565A,A59A9A,534546`
         - ![自定义颜色效果](./assets/p-color.png)
@@ -28,4 +27,3 @@
             - ![大尺寸](./assets/music-big.png)
             - ![小尺寸](./assets/music-small.png)
     - `&width=360` 可以写你想要的宽度，范围是 280－530
-    
